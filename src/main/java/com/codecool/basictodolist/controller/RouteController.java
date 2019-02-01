@@ -46,25 +46,25 @@ public class RouteController {
         return SUCCESS;
     }
 
-    @DeleteMapping(value = "/todos/:id")
-    public String removeTodoById(@RequestParam("id") String id) {
+    @DeleteMapping(value = "/todos/{id}")
+    public String removeTodoById(@PathVariable("id") String id) {
         TodoDao.remove(id);
         return SUCCESS;
     }
 
-    @PutMapping(value = "/todos/:id")
-    public String updateTodoById(@RequestParam("id") String id, @RequestParam("todo-title") String title) {
+    @PutMapping(value = "/todos/{id}")
+    public String updateTodoById(@PathVariable("id") String id, @RequestParam("todo-title") String title) {
         TodoDao.update(id, title);
         return SUCCESS;
     }
 
-    @GetMapping(value = "/todos/:id")
-    public void findTodoById(@RequestParam("id") String id) {
+    @GetMapping(value = "/todos/{id}")
+    public void findTodoById(@PathVariable("id") String id) {
         TodoDao.find(id).getTitle();
     }
 
-    @PutMapping("/todos/:id/toggle_status")
-    public String toggleStatusById(@RequestParam("id") String id, @RequestParam("status") String status) {
+    @PutMapping("/todos/{id}/toggle_status")
+    public String toggleStatusById(@PathVariable("id") String id, @RequestParam("status") String status) {
         boolean completed = status.equals("true");
         TodoDao.toggleStatus(id, completed);
         return SUCCESS;
