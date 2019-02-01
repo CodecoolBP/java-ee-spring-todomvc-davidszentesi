@@ -1,7 +1,5 @@
 package com.codecool.basictodolist.model;
 
-import org.springframework.stereotype.Component;
-
 public class Todo {
 
     private String title;
