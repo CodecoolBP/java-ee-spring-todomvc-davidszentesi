@@ -1,18 +1,21 @@
+package com.codecool.basictodolist;
 
-import model.Todo;
-import model.TodoDao;
-import org.json.JSONArray;
-import org.json.JSONObject;
-import java.util.List;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import static spark.Spark.*;
 
+@SpringBootApplication
 public class BasicTodoList {
 
-    private static final String SUCCESS = "{\"success\":true}";
+//    private static final String SUCCESS = "{\"success\":true}";
 
     public static void main(String[] args) {
+        SpringApplication.run(BasicTodoList.class, args);
+    }
 
+}
+
+        /*
         addSampleData();
 
         exception(Exception.class, (e, req, res) -> e.printStackTrace()); // print all exceptions
@@ -81,5 +84,5 @@ public class BasicTodoList {
         TodoDao.add(Todo.create("second TODO item"));
         TodoDao.add(Todo.create("third TODO item"));
     }
+    */
 
-}
