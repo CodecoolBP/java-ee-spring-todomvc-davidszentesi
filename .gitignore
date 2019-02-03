@@ -5,3 +5,4 @@ out/*
 target/*
 
 application.properties
+auth0.properties

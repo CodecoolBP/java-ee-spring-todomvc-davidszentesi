@@ -54,7 +54,6 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
-
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
