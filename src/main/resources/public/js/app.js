@@ -11,6 +11,7 @@ window.addEventListener('load', function() {
         domain: 'szntsd.eu.auth0.com',
         clientID: 'hX0GbPQLyktTYtFBkCeG4UdRVr55J6vs',
         responseType: 'token id_token',
+        audience: 'https://todomvc/api',
         scope: 'openid profile',
         redirectUri: window.location.href
     });
@@ -63,6 +64,8 @@ window.addEventListener('load', function() {
             authResult.expiresIn * 1000 + new Date().getTime()
         );
         accessToken = authResult.accessToken;
+        localStorage.setItem('accessToken', accessToken);
+        console.log(accessToken);
         idToken = authResult.idToken;
     }
 
