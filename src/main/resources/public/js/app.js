@@ -85,11 +85,13 @@ window.addEventListener('load', function() {
     function logout() {
         // Remove isLoggedIn flag from localStorage
         localStorage.removeItem('isLoggedIn');
+        localStorage.removeItem('accessToken');
         // Remove tokens and expiry time
         accessToken = '';
         idToken = '';
         expiresAt = 0;
         displayButtons();
+        location.reload();
     }
 
     function isAuthenticated() {
